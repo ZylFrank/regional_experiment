@@ -1,10 +1,11 @@
 '''
 批量格式化单元格数据
 '''
-
+import os
 import traceback
 import pandas as pd
-
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.getcwd(), "../common")))
 from base import get_folder_files, save_file
 
 # 要处理的文件目录
