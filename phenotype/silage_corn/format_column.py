@@ -23,7 +23,8 @@ def col_finder(col):
 
 def check_column(cols:list):
     global MAPS
-    new_cols = []
+    new_cols = {}
+    cols_type = []
     for col in cols:
         if col not in MAPS: # 非标准表头
             new_col = col_finder(col)
@@ -36,18 +37,23 @@ def check_column(cols:list):
                     new_name = input("请输入标准名称:")
                     if new_name in MAPS:
                         MAPS[new_name].append(col)
-                        new_cols.append(new_name)
+                        new_cols[col] = new_name
+                        cols_type.append(MAPS[new_name][0])
                     else:
                         data_type = input("请输入数据类型:(int/float/str)")
                         MAPS[new_name]=[data_type, col]
-                        new_cols.append(new_name)
+                        new_cols[col] = new_name
+                        cols_type.append(data_type)
                 else:
                     pass
             else:
-                new_cols.append(new_col)
+                new_cols[col] = new_col
+                cols_type.append(MAPS[new_col][0])
         else:
-            new_cols.append(col)
-    return new_cols
+            new_cols[col] = col
+            cols_type.append(MAPS[col][0])
+
+    return (new_cols, cols_type)
 
 
 
@@ -59,12 +65,16 @@ def format_column(fp:str, output)->None:
             print(file_path)
             df = pd.read_csv(file_path)
             df_columns = df.columns.to_list()
-            new_columns = check_column(df_columns)
-            df.columns = new_columns
+            (new_columns, cols_type) = check_column(df_columns)
+            # 数据格式转换
+            # old_cols = list(new_columns.keys())
+            # for index, col in enumerate(old_cols):
+            #     df[col] = df[col].astype(eval(cols_type[index]))
+            # 表头统一命名
+            df.rename(new_columns, inplace=True)
             new_file_path = file_path.replace(fp, output)
             print(f"file saved: {new_file_path}")
             save_file(df, new_file_path)
-            print(MAPS)
 
 
 if __name__ == "__main__":

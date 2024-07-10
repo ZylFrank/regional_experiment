@@ -2,6 +2,7 @@
 公用方法
 '''
 import os
+import hashlib
 import pandas as pd
 
 
@@ -31,3 +32,15 @@ def save_file(df, fp, **args):
         os.makedirs(folder_path)
     df.to_csv(new_file_path, index=False, encoding="utf-8_sig", **args)
 
+
+def md5_id(contexts:list)->str:
+    """生成表型记录的ID
+
+    Args:
+        contexts (_list_): _description_
+    Returns:
+        _str_: md5
+    """
+    md5 = hashlib.md5()
+    md5.update("-".join([str(v) for v in contexts]).encode("utf-8"))
+    return md5.hexdigest()
