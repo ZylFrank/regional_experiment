@@ -75,7 +75,7 @@ if __name__ == "__main__":
     parser.add_argument("-c", "--config", help="input config file path", type=argparse.FileType("r"), required=True)
     args = parser.parse_args()
 
-    with open(args.config.name, "r") as f:
+    with open(args.config.name, "r", encoding="utf-8") as f:
         config = json.load(f)
 
     MAPS = config['maps']
@@ -89,4 +89,4 @@ if __name__ == "__main__":
             "folder_path": config['folder_path'],
             "output": config['output'],
             "maps": MAPS
-        }, f)
+        }, f, ensure_ascii=False)
