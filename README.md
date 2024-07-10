@@ -15,6 +15,13 @@ cd regional_experiment/phenotype/silage_corn
 python3 format_column.py -c ../../config/format_column.json
 ```
 
+- 按表型拆分数据
+  
+```bash
+cd regional_experiment/phenotype/silage_corn
+python3 split_pheno_data.py -c ../../config/split_pheno_data.json
+```
+
 ## 项目目录
 ```
 .
