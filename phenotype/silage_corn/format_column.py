@@ -62,7 +62,6 @@ def format_column(fp:str, output)->None:
     for file_path in files_path:
         # 只处理分析分级结果
         if file_path[-6:-4:] == "结果":
-            print(file_path)
             df = pd.read_csv(file_path)
             df_columns = df.columns.to_list()
             (new_columns, cols_type) = check_column(df_columns)
@@ -71,7 +70,7 @@ def format_column(fp:str, output)->None:
             # for index, col in enumerate(old_cols):
             #     df[col] = df[col].astype(eval(cols_type[index]))
             # 表头统一命名
-            df.rename(new_columns, inplace=True)
+            df.rename(columns=new_columns, inplace=True)
             new_file_path = file_path.replace(fp, output)
             print(f"file saved: {new_file_path}")
             save_file(df, new_file_path)
