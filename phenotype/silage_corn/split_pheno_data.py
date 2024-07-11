@@ -17,14 +17,23 @@ def split_pheno_data(config):
 
     final_dfs = {}
     for k in config["keys"]:
-        final_dfs[k] = pd.DataFrame()
+        if type(k) == list:
+            final_dfs[k[0]] = pd.DataFrame()
+        else:
+            final_dfs[k] = pd.DataFrame()
 
     for file_path in files_path:
         df = pd.read_csv(file_path)
         for k in config["keys"]:
-            if k in df.columns:
-                k_df = df[config["must_include"] + [k]]
-                final_dfs[k] = pd.concat([final_dfs[k], k_df])
+            if type(k) == list:
+                ks = [v for v in k if v in df.columns]
+                if len(ks) > 0:
+                    k_df = df[config["must_include"] + ks]
+                    final_dfs[k[0]] = pd.concat([final_dfs[k[0]], k_df])
+            else:
+                if k in df.columns:
+                    k_df = df[config["must_include"] + [k]]
+                    final_dfs[k] = pd.concat([final_dfs[k], k_df])
 
     for key, k_df in final_dfs.items():
         new_file_path = f'{config["output"]}/{key}.csv'

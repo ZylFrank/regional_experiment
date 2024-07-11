@@ -8,14 +8,24 @@
 ## 表型
 
 ### 青贮玉米
-- 统一表头：regional_experiment/phenotype/silage_corn/format_column.py
+- 统一表头: regional_experiment/phenotype/silage_corn/format_column.py
 
 ```bash
 cd regional_experiment/phenotype/silage_corn
 python3 format_column.py -c ../../config/format_column.json
 ```
 
-- 按表型拆分数据
+- 按表型拆分数据: regional_experiment/phenotype/silage_corn/split_pheno_data.py
+
+`config.json`
+```json
+{
+    "keys": [
+        ["大斑病病级", "大斑病病级（吉林）", "大斑病病级（黑龙江）"], // 多列合并，其中第一个元素为文件名
+        "小斑病病级"
+    ]
+}
+```
   
 ```bash
 cd regional_experiment/phenotype/silage_corn
