@@ -42,7 +42,7 @@ python3 split_pheno_data.py -c ../../config/split_pheno_data.json
 
 - 基因型数据存入数据库: regional_experiment/genotype/gt2sql.py
 
-> 基因型数据库已构建，可直接使用 [跳转下载]()
+> 基因型数据库已构建可直接使用 [百度云](https://pan.baidu.com/s/16U2ki2AbCwiYVqUrEBGwZg?pwd=6b5v)
 
 - 导出样本的基因型数据: regional_experiment/genotype/export_gt.py
 
