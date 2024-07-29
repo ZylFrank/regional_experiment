@@ -1,0 +1,5 @@
+{
+  "probeset_file_path": "/Users/zyl/Workspace/github/regional_experiment/public/probeset_info.csv",
+  "sample_file_path": "/Users/zyl/Documents/区试数据/基因型/genotype/样品信息及芯片孔位号对应关系最终汇总版-马世鹏20240708.xlsx",
+  "db_path": "/Users/zyl/Documents/区试数据/Database.db"
+}
