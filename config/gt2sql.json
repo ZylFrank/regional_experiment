@@ -1,0 +1,24 @@
+{
+    "db_path": "/Users/zyl/Documents/区试数据/Database.db",
+    "gt_files_path": {
+        "P00156":"/Users/zyl/Documents/区试数据/基因型/genotype/P00156.xlsx",
+        "P00157":"/Users/zyl/Documents/区试数据/基因型/genotype/P00157.xlsx",
+        "P00166":"/Users/zyl/Documents/区试数据/基因型/genotype/P00166-QS23P003-0306-G.xlsx",
+        "P00167":"/Users/zyl/Documents/区试数据/基因型/genotype/P00167-QS23P004-0306-G.xlsx",
+        "P00168":"/Users/zyl/Documents/区试数据/基因型/genotype/P00168-QS23P005-0307-G.xlsx",
+        "P00169":"/Users/zyl/Documents/区试数据/基因型/genotype/P00169-QS23P006-0307-G.xlsx",
+        "MSP24C00002P":"/Users/zyl/Documents/区试数据/基因型/genotype/P00173-MSP24C00002P-0318-QC90.xlsx",
+        "MSP24C00003P":"/Users/zyl/Documents/区试数据/基因型/genotype/P00174-MSP24C00003P-0319-QC90.xlsx",
+        "MSP24C00004P":"/Users/zyl/Documents/区试数据/基因型/genotype/P00175-MSP24C00004P-0319-QC90.xlsx",
+        "MSP24C00005P":"/Users/zyl/Documents/区试数据/基因型/genotype/P00176-MSP24C00005P-0403-QC90.xlsx",
+        "MSP24C00006P":"/Users/zyl/Documents/区试数据/基因型/genotype/P00177-MSP24C00006P-0403-QC90.xlsx",
+        "P00178":"/Users/zyl/Documents/区试数据/基因型/genotype/P00178-QS23P031-0409-QC90-G.xlsx",
+        "P00179":"/Users/zyl/Documents/区试数据/基因型/genotype/P00179-QS23P032-0410-QC90-G.xlsx",
+        "P00180":"/Users/zyl/Documents/区试数据/基因型/genotype/P00180-QS23P037-0410-QC90-G.xlsx",
+        "P00181":"/Users/zyl/Documents/区试数据/基因型/genotype/P00181-QS23P038-0411-QC90-G.xlsx",
+        "MSP24C00007P":"/Users/zyl/Documents/区试数据/基因型/genotype/P00182-MSP24C00007P-0411_QC90-G.xlsx",
+        "MSP24C00008P":"/Users/zyl/Documents/区试数据/基因型/genotype/P00183-MSP24C00008P-0419_QC90.xlsx",
+        "P00184":"/Users/zyl/Documents/区试数据/基因型/genotype/P00184-QS23P043-0423-QC90-G.xlsx",
+        "P00185":"/Users/zyl/Documents/区试数据/基因型/genotype/P00185-QS23P044-0424_QC90-G.xlsx"
+    }
+}
