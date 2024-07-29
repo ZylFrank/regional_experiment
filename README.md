@@ -46,7 +46,10 @@ python3 split_pheno_data.py -c ../../config/split_pheno_data.json
 
 - 导出样本的基因型数据: regional_experiment/genotype/export_gt.py
 
-
+```bash
+cd regional_experiment/genotype
+python3 export_gt.py -c "../config/export_gt.json"
+```
 
 ## 项目目录
 ```
