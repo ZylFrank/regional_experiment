@@ -15,17 +15,13 @@ TABLE_COLUMNS_MAP = {
         "start": ["INTEGER", "物理位置"],
         "markertype": ["TEXT", "标记类型"],
     },
-    "Genotype": {
-        "id": ["TEXT PRIMARY KEY NOT NULL", "ID"],
-        "genotype": ["TEXT", "基因分型"],
-        "sample_id": ["TEXT", "样品ID"],
-    },
     "Sample": {
         "id": ["TEXT PRIMARY KEY NOT NULL", "ID"],
         "sample_barcode": ["TEXT", "样品条码号"],
         "sample_name": ["TEXT", "样品名称"],
         "call_code": ["TEXT", "样品试验编号"],
         "board_code": ["TEXT", "实验板号"],
+        "genotype": ["TEXT", "基因分型"],
     },
 }
 
@@ -64,22 +60,6 @@ class SqlCur:
             d[col[0]] = row[idx]
         return d
 
-    def init_probeset_table(self, probeset_df):
-        """
-        初始化数据库
-        """
-        probeset_df.to_sql(
-            "Probesets",
-            self.conn,
-            if_exists="replace",
-            index=False,
-            dtype={
-                "probeset_id": "TEXT PRIMARY KEY NOT NULL",
-                "chr_id": "TEXT",
-                "start": "INTEGER",
-                "markertype": "TEXT",
-            },
-        )
 
     def create_new_table(self, table_name: str, sql_str: str)->None:
         """create a new table, table will be deleted if it already exists!

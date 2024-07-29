@@ -34,7 +34,7 @@ def save_file(df, fp, **args):
 
 
 def md5_id(contexts:list)->str:
-    """生成表型记录的ID
+    """根据内容生成MD5摘要ID
 
     Args:
         contexts (_list_): _description_

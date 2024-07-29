@@ -26,26 +26,55 @@ python3 format_column.py -c ../../config/format_column.json
     ]
 }
 ```
-  
+
 ```bash
 cd regional_experiment/phenotype/silage_corn
 python3 split_pheno_data.py -c ../../config/split_pheno_data.json
 ```
 
+## 基因型
+
+### 使用数据库管理基因型数据
+
+> 本项目使用Sqlite3数据库，首先需要确保电脑上安装了Sqlite3 [How to install sqlite](https://www.runoob.com/sqlite/sqlite-installation.html), [Sqlite客户端软件](https://sqlitebrowser.org/) 
+
+- 初始化数据库: regional_experiment/genotype/init_db.py
+
+- 基因型数据存入数据库: regional_experiment/genotype/gt2sql.py
+
+> 基因型数据库已构建，可直接使用 [跳转下载]()
+
+- 导出样本的基因型数据: regional_experiment/genotype/export_gt.py
+
+
+
 ## 项目目录
 ```
 .
 ├── README.md
-├── common # 公共方法库
-│   └── base.py
-├── config  # 程序配置文件示例
+├── common
+│   ├── base.py
+│   └── sql_cur.py
+├── config
+│   ├── columns_merge.json
+│   ├── export_gt.json
 │   ├── format_column.json
-│   └── split_pheno_data.json
-└── phenotype
-    ├── debug.py
-    ├── format_cells.py
-    ├── silage_corn
-    │   └── format_column.py # 青贮玉米表型数据表头统一
-    ├── split_pheno_data.py
-    └── test.csv
+│   ├── format_column_resistance.json
+│   ├── gt2sql.json
+│   ├── init_db.json
+│   ├── split_pheno_data.json
+│   └── split_resistance_data.json
+├── debug.ipynb
+├── genotype
+│   ├── export_gt.py
+│   ├── gt2sql.py
+│   └── init_db.py
+├── phenotype
+│   ├── debug.ipynb
+│   ├── format_cells.py
+│   ├── resistance
+│   ├── silage_corn
+│   └── test.csv
+└── public
+    └── probeset_info.csv
 ```

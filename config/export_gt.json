@@ -1,0 +1,15 @@
+{
+  "db_path": "/Users/zyl/Documents/区试数据/Database.db",
+  "query": [
+    {
+      "sample_barcode": "fG027"
+    },
+    {
+      "sample_barcode": "MG2300031"
+    },
+    {
+      "sample_name": "丹6107"
+    }
+  ],
+  "output": "/Users/zyl/Documents/区试数据"
+}
